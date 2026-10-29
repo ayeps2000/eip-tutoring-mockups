@@ -1,0 +1,634 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Early Intervention Platform - Tutor Workspace</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Public Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#224a6a",
+            "on-tertiary-fixed-variant": "#4f319b",
+            "on-surface": "#0c1d2b",
+            "inverse-on-surface": "#e8f2ff",
+            "secondary-container": "#8af791",
+            "surface": "#f7f9ff",
+            "on-error": "#ffffff",
+            "primary-fixed": "#cde5ff",
+            "primary": "#033453",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#42474d",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "outline-variant": "#c2c7ce",
+            "primary-fixed-dim": "#a4caf0",
+            "error": "#ba1a1a",
+            "inverse-primary": "#a4caf0",
+            "tertiary-fixed": "#e8ddff",
+            "on-secondary-fixed": "#002106",
+            "on-tertiary-container": "#c0aaff",
+            "secondary-fixed-dim": "#71dd7a",
+            "tertiary": "#391685",
+            "on-primary-fixed": "#001d32",
+            "surface-tint": "#3c6283",
+            "on-primary-container": "#95bbe0",
+            "surface-container-high": "#d9eafe",
+            "surface-bright": "#f7f9ff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#005319",
+            "tertiary-fixed-dim": "#cebdff",
+            "on-secondary-container": "#007326",
+            "tertiary-container": "#50339c",
+            "surface-dim": "#cbdcef",
+            "surface-container-highest": "#d4e4f8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#edf4ff",
+            "on-secondary": "#ffffff",
+            "secondary": "#006e24",
+            "surface-container": "#e2efff",
+            "primary-container": "#234b6b",
+            "surface-variant": "#d4e4f8",
+            "secondary-fixed": "#8dfa94",
+            "on-background": "#0c1d2b",
+            "inverse-surface": "#223241",
+            "on-tertiary-fixed": "#21005e",
+            "background": "#f7f9ff",
+            "outline": "#72777e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Public Sans"],
+            "display": ["Public Sans"],
+            "body": ["Public Sans"],
+            "label": ["Public Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background-color: #edf1f4;
+      color: #142131;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#edf1f4] text-[#142131] antialiased">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 flex items-center justify-between px-6 shadow-sm">
+<div class="flex items-center gap-3">
+<!-- Brand Logo Badge -->
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-surface-container-lowest font-bold text-xs tracking-wider">
+        EIP
+      </div>
+<div class="flex items-center gap-2.5">
+<span class="font-bold text-sm tracking-tight text-primary">Early Intervention Platform</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-container-low text-primary-container border border-outline-variant">
+          Fall 2026 · Peer tutor
+        </span>
+</div>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-5">
+<button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+</button>
+<div class="h-5 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-surface-container-lowest flex items-center justify-center font-semibold text-xs tracking-tight shadow-sm">
+          AH
+        </div>
+<div class="flex flex-col text-left">
+<span class="text-xs font-semibold leading-tight text-[#142131]">Amal Hassan</span>
+<span class="text-[11px] text-on-surface-variant leading-tight">Mathematics &amp; Physics · Peer tutor</span>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed top-14 left-0 bottom-0 w-[220px] bg-surface-container-lowest border-r border-outline-variant z-30 flex flex-col justify-between p-3 select-none">
+<div class="flex flex-col gap-1">
+<div class="px-3 pt-2 pb-3">
+<h2 class="text-[10px] font-bold tracking-wider text-outline uppercase font-label">TUTOR WORKSPACE</h2>
+<p class="text-[11px] text-on-surface-variant font-medium">Fall 2026 · Academic Support</p>
+</div>
+<nav class="flex flex-col gap-1">
+<!-- My sessions -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_available">event_available</span>
+<span>My sessions</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-surface-container-low text-primary-container">5</span>
+</a>
+<!-- My groups (ACTIVE: pale green #dcfce7, green text #1f6f43) -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg bg-[#e7f4ea] text-[#1f6f43] font-semibold transition-colors duration-150 text-xs" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<span>My groups</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-[#d2edd6] text-[#1f6f43]">1</span>
+</a>
+<!-- My availability -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span>My availability</span>
+</div>
+<span class="text-[10px] font-medium text-outline">4 days</span>
+</a>
+<!-- My tutoring courses -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" data-icon="assignment">assignment</span>
+<span>My tutoring courses</span>
+</div>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-surface-container-low text-primary-container">2</span>
+</a>
+<!-- Request schedule update -->
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="dashboard">dashboard</span>
+<span>Request schedule update</span>
+</a>
+</nav>
+</div>
+<!-- Footer Tabs -->
+<div class="border-t border-outline-variant pt-2 flex flex-col gap-1">
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help_outline">help_outline</span>
+<span>Help &amp; Guidelines</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150 text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas (Desktop 1280px targeted layout) -->
+<main class="ml-[220px] pt-14 pb-12 px-8 min-h-screen">
+<div class="max-w-[1060px] mx-auto pt-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-1.5 text-xs text-on-surface-variant mb-3">
+<a class="hover:text-primary transition-colors" href="#">My groups</a>
+<span class="material-symbols-outlined text-sm text-outline" data-icon="chevron_right">chevron_right</span>
+<span class="text-[#142131] font-semibold">MATH 112 Thursday</span>
+</nav>
+<!-- Header Row & Metadata Panel -->
+<div class="bg-surface-container-lowest rounded-[10px] border border-[#cfd7df] p-5 mb-6 shadow-[0_1px_3px_rgba(20,33,49,0.06)] border-l-4 border-l-[#5b3fa8]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<h1 class="text-xl font-bold text-[#142131] tracking-tight">MATH 112 Thursday</h1>
+<!-- Group Accent Pill -->
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#ebe6f6] text-[#5b3fa8]">
+              Group
+            </span>
+</div>
+<!-- Danger Outline Button: End Series -->
+<button class="h-9 px-4 rounded-lg border border-[#c0392b] text-[#c0392b] hover:bg-red-50 text-xs font-semibold flex items-center gap-1.5 transition-colors duration-150">
+<span class="material-symbols-outlined text-base" data-icon="close">close</span>
+            End series
+          </button>
+</div>
+<!-- Subtitle Metadata Line -->
+<div class="flex flex-wrap items-center gap-3 text-xs text-on-surface-variant font-medium pt-1">
+<span class="text-[#142131] font-semibold">MATH 112</span>
+<span class="text-outline">·</span>
+<span>Thursdays 4:00–5:00 PM</span>
+<span class="text-outline">·</span>
+<span>Main - Hive</span>
+<span class="text-outline">·</span>
+<!-- Seat Meter -->
+<div class="flex items-center gap-1.5" title="4 seats taken of 6">
+<div class="flex items-center gap-[2px]">
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#2f9e44]"></span>
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#2f9e44]"></span>
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#2f9e44]"></span>
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#2f9e44]"></span>
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#d9e0e7]"></span>
+<span class="w-[6px] h-[14px] rounded-[1px] bg-[#d9e0e7]"></span>
+</div>
+<span class="text-[11px] text-outline font-medium">4 of 6</span>
+</div>
+<span class="text-outline">·</span>
+<!-- Status Chip: Invite Sent -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+            Invite sent
+          </div>
+<span class="text-outline">·</span>
+<!-- Join Teams Button -->
+<button class="h-8 px-3 rounded-lg bg-[#5059c9] hover:bg-[#434bb0] text-surface-container-lowest text-xs font-semibold flex items-center gap-2 shadow-sm transition-colors duration-150">
+<span class="w-4 h-4 bg-surface-container-lowest rounded-sm flex items-center justify-center text-[#5059c9] font-bold text-[10px]">T</span>
+            Join Teams
+          </button>
+</div>
+</div>
+<!-- Main Layout: 2 Columns (5/12 and 7/12) -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Column: Roster (5/12) -->
+<div class="col-span-5 flex flex-col gap-5">
+<div class="bg-surface-container-lowest rounded-[10px] border border-[#cfd7df] p-5 shadow-[0_1px_3px_rgba(20,33,49,0.06)]">
+<!-- Roster Header -->
+<div class="flex items-center justify-between pb-3 border-b border-[#e3e8ed] mb-2">
+<div class="flex items-center gap-2">
+<h2 class="font-bold text-sm text-[#142131]">Roster</h2>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container-low text-primary-container">
+                  4 students
+                </span>
+</div>
+<button class="h-8 px-3 rounded-lg bg-[#2f9e44] hover:bg-[#27863a] text-surface-container-lowest text-xs font-semibold flex items-center gap-1 shadow-sm transition-colors duration-150">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                Add students
+              </button>
+</div>
+<!-- 4 Member Rows -->
+<div class="divide-y divide-[#e3e8ed]">
+<!-- Student 1 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center">
+                    SM
+                  </div>
+<div>
+<p class="text-xs font-semibold text-[#142131] leading-tight">Salem Al Marzooqi</p>
+<p class="text-[11px] text-outline leading-tight mt-0.5">ID 100245 · joined themselves</p>
+</div>
+</div>
+<button class="h-7 px-2.5 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant text-[11px] font-semibold transition-colors duration-150">
+                  Remove
+                </button>
+</div>
+<!-- Student 2 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center">
+                    RG
+                  </div>
+<div>
+<p class="text-xs font-semibold text-[#142131] leading-tight">Rawda Ghudayyer</p>
+<p class="text-[11px] text-outline leading-tight mt-0.5">ID 100402 · added by you</p>
+</div>
+</div>
+<button class="h-7 px-2.5 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant text-[11px] font-semibold transition-colors duration-150">
+                  Remove
+                </button>
+</div>
+<!-- Student 3 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center">
+                    OA
+                  </div>
+<div>
+<p class="text-xs font-semibold text-[#142131] leading-tight">Omar Al Shamsi</p>
+<p class="text-[11px] text-outline leading-tight mt-0.5">ID 100511 · added by CTL</p>
+</div>
+</div>
+<button class="h-7 px-2.5 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant text-[11px] font-semibold transition-colors duration-150">
+                  Remove
+                </button>
+</div>
+<!-- Student 4 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary font-bold text-xs flex items-center justify-center">
+                    MK
+                  </div>
+<div>
+<p class="text-xs font-semibold text-[#142131] leading-tight">Maitha Al Ketbi</p>
+<p class="text-[11px] text-outline leading-tight mt-0.5">ID 100587 · joined themselves</p>
+</div>
+</div>
+<button class="h-7 px-2.5 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant text-[11px] font-semibold transition-colors duration-150">
+                  Remove
+                </button>
+</div>
+</div>
+<!-- Expandable Drawer: Referred Students -->
+<div class="border border-dashed border-[#a4caf0] bg-[#f4f8fc] p-3.5 rounded-[10px] mt-4">
+<div class="mb-2">
+<p class="text-xs font-bold text-primary">Your referred students in MATH 112 not yet in a group</p>
+<p class="text-[11px] text-on-surface-variant mt-0.5">Tick the students to add. Their referral moves into this group.</p>
+</div>
+<!-- Checkbox items -->
+<div class="space-y-2 mt-3">
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest border border-[#cfd7df] cursor-pointer hover:border-primary transition-colors">
+<input checked="" class="w-4 h-4 rounded text-secondary focus:ring-primary border-[#cfd7df]" type="checkbox">
+<div class="text-xs">
+<span class="font-semibold text-[#142131]">Hessa Al Nuaimi</span>
+<span class="text-outline text-[11px]"> · ID 100318 · book by 24 Nov</span>
+</div>
+</label>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest border border-[#cfd7df] cursor-pointer hover:border-primary transition-colors">
+<input class="w-4 h-4 rounded text-secondary focus:ring-primary border-[#cfd7df]" type="checkbox">
+<div class="text-xs">
+<span class="font-semibold text-[#142131]">Khalid Al Mazrouei</span>
+<span class="text-outline text-[11px]"> · ID 100633 · book by 30 Nov</span>
+</div>
+</label>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center justify-end gap-2 mt-3 pt-2">
+<button class="h-7 px-3 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-xs font-medium text-on-surface-variant">
+                  Close
+                </button>
+<button class="h-7 px-3 rounded-lg bg-[#2f9e44] hover:bg-[#27863a] text-surface-container-lowest text-xs font-semibold shadow-sm">
+                  Add 1 student
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sessions (7/12) -->
+<div class="col-span-7">
+<div class="bg-surface-container-lowest rounded-[10px] border border-[#cfd7df] p-5 shadow-[0_1px_3px_rgba(20,33,49,0.06)]">
+<!-- Sessions Header -->
+<div class="flex items-center justify-between pb-3 border-b border-[#e3e8ed] mb-1">
+<div>
+<h2 class="font-bold text-sm text-[#142131]">Sessions</h2>
+<p class="text-[11px] text-outline">Click a session to record attendance</p>
+</div>
+<span class="text-[11px] font-medium text-on-surface-variant">10 Total Sessions</span>
+</div>
+<!-- 10 Session Rows -->
+<div class="divide-y divide-[#e3e8ed]">
+<!-- 1/10 Past Session -->
+<div class="py-2.5 flex items-center justify-between opacity-75 hover:bg-surface-container-low/50 px-2 rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-outline w-9">1/10</span>
+<span class="text-xs text-on-surface-variant">Thu 6 Nov 2026 · 4:00 PM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#e3e9ee] text-[#3f5061]">
+                  4 attended
+                </span>
+</div>
+<!-- 2/10 Past Session -->
+<div class="py-2.5 flex items-center justify-between opacity-75 hover:bg-surface-container-low/50 px-2 rounded transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-outline w-9">2/10</span>
+<span class="text-xs text-on-surface-variant">Thu 13 Nov 2026 · 4:00 PM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#fbf1d9] text-[#85651d]">
+                  3 attended, 1 missed
+                </span>
+</div>
+<!-- 3/10 CURRENT & EXPANDED (Record Attendance) -->
+<div class="py-3 px-3 bg-[#f7f9ff] rounded-[8px] border-2 border-primary/20 my-2">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-surface-container-lowest font-bold text-[10px]">3/10</span>
+<span class="text-xs font-bold text-[#142131]">Record Attendance — Thu 20 Nov 2026 · 4:00 PM</span>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Current session
+                  </span>
+</div>
+<!-- Expanded Member Attendance Checklist -->
+<div class="space-y-2.5 bg-surface-container-lowest p-3.5 rounded-lg border border-[#cfd7df] shadow-sm">
+<!-- Member 1 -->
+<div class="flex items-center justify-between text-xs">
+<div>
+<span class="font-semibold text-[#142131]">Salem Al Marzooqi</span>
+<span class="text-[11px] text-outline"> (100245)</span>
+</div>
+<select class="h-8 py-0 pl-2.5 pr-8 text-xs border border-[#cfd7df] rounded-lg focus:ring-primary focus:border-primary text-[#142131] bg-surface-container-lowest font-medium">
+<option selected="">Attended</option>
+<option>Did Not Attend</option>
+<option>Not Recorded</option>
+<option>Not Applicable</option>
+</select>
+</div>
+<!-- Member 2 -->
+<div class="flex items-center justify-between text-xs">
+<div>
+<span class="font-semibold text-[#142131]">Rawda Ghudayyer</span>
+<span class="text-[11px] text-outline"> (100402)</span>
+</div>
+<select class="h-8 py-0 pl-2.5 pr-8 text-xs border border-[#cfd7df] rounded-lg focus:ring-primary focus:border-primary text-[#142131] bg-surface-container-lowest font-medium">
+<option selected="">Attended</option>
+<option>Did Not Attend</option>
+<option>Not Recorded</option>
+<option>Not Applicable</option>
+</select>
+</div>
+<!-- Member 3 -->
+<div class="flex items-center justify-between text-xs">
+<div>
+<span class="font-semibold text-[#142131]">Omar Al Shamsi</span>
+<span class="text-[11px] text-outline"> (100511)</span>
+</div>
+<select class="h-8 py-0 pl-2.5 pr-8 text-xs border border-[#cfd7df] rounded-lg focus:ring-primary focus:border-primary text-[#142131] bg-surface-container-lowest font-medium">
+<option selected="">Attended</option>
+<option>Did Not Attend</option>
+<option>Not Recorded</option>
+<option>Not Applicable</option>
+</select>
+</div>
+<!-- Member 4 -->
+<div class="flex items-center justify-between text-xs">
+<div>
+<span class="font-semibold text-[#142131]">Maitha Al Ketbi</span>
+<span class="text-[11px] text-outline"> (100587)</span>
+</div>
+<select class="h-8 py-0 pl-2.5 pr-8 text-xs border border-[#cfd7df] rounded-lg focus:ring-primary focus:border-primary text-[#c0392b] font-medium bg-red-50/30">
+<option>Attended</option>
+<option selected="">Did Not Attend</option>
+<option>Not Recorded</option>
+<option>Not Applicable</option>
+</select>
+</div>
+<!-- Session Notes -->
+<div class="pt-2 border-t border-[#e3e8ed] mt-2">
+<label class="block text-[11px] font-semibold text-on-surface-variant mb-1">
+                      Session note (shared with CTL and the counselor)
+                    </label>
+<textarea class="w-full text-xs border border-[#cfd7df] rounded-lg p-2 focus:ring-primary focus:border-primary placeholder:text-outline/70" placeholder="Enter notes regarding topics covered, engagement, or follow-up recommendations..." rows="2"></textarea>
+</div>
+<!-- Attendance Footer Actions -->
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="h-8 px-3.5 rounded-lg border border-[#cfd7df] bg-surface-container-lowest hover:bg-surface-container-low text-xs font-medium text-on-surface-variant">
+                      Cancel
+                    </button>
+<button class="h-8 px-4 rounded-lg bg-[#2f9e44] hover:bg-[#27863a] text-surface-container-lowest text-xs font-semibold shadow-sm transition-colors">
+                      Save attendance
+                    </button>
+</div>
+</div>
+</div>
+<!-- 4/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">4/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 27 Nov 2026 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">5/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 4 Dec 2026 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 6/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">6/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 11 Dec 2026 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 7/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">7/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 18 Dec 2026 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 8/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">8/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 8 Jan 2027 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 9/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">9/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 15 Jan 2027 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 10/10 Future Session -->
+<div class="py-2.5 flex items-center justify-between hover:bg-surface-container-low/50 px-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-xs font-semibold text-on-surface-variant w-9">10/10</span>
+<span class="text-xs font-medium text-[#142131]">Thu 22 Jan 2027 · 4:00 PM</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#2f9e44]"></span>
+                    Invite sent
+                  </span>
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container-high transition-colors" title="Reschedule session">
+<span class="material-symbols-outlined text-[17px]" data-icon="edit_calendar">edit_calendar</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-error rounded hover:bg-surface-container-high transition-colors" title="Cancel session">
+<span class="material-symbols-outlined text-[17px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

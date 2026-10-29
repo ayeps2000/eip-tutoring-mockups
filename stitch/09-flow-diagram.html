@@ -1,0 +1,435 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How a booking becomes an invite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Public Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#234b6b',
+              navyDark: '#173650',
+              gold: '#9a7a2e',
+              goldLight: '#fbf5e8',
+              goldBorder: '#d4b768',
+              bg: '#edf1f4',
+              surface: '#ffffff',
+              muted: '#5a6977',
+              border: '#d0d8e0',
+              dashGrey: '#9ba8b5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #edf1f4;
+      font-family: 'Public Sans', sans-serif;
+      color: #1a2530;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+    /* Flow arrow styling */
+    .flow-arrow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Slim Top Bar -->
+  <header class="w-full h-14 bg-white border-b border-[#d8e0e7] px-8 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center justify-center px-2 py-0.5 rounded text-xs font-bold tracking-wider bg-[#234b6b] text-white">EIP</span>
+      <span class="text-sm font-semibold text-[#1a2530] tracking-tight">Early Intervention Platform</span>
+      <span class="text-xs text-[#6e7f91] font-normal pl-2 border-l border-[#d8e0e7]">Proposal · Tutoring invites</span>
+    </div>
+    <div class="flex items-center gap-4 text-xs font-medium text-[#4f6072]">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#e8f1f8] text-[#234b6b] font-semibold">
+        <span class="w-2 h-2 rounded-full bg-[#1b7a43]"></span> Fall 2026 · Proposal
+      </span>
+      <span>Center for Teaching &amp; Learning (CTL)</span>
+    </div>
+  </header>
+
+  <!-- Main Container (1280px Desktop Canvas) -->
+  <main class="w-[1280px] max-w-[1280px] mx-auto px-8 py-8 flex-1 flex flex-col">
+
+    <!-- Header Section -->
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded text-xs font-bold tracking-wide uppercase bg-[#e2ecf5] text-[#234b6b] mb-2.5">
+        <span class="material-symbols-outlined text-[16px]">sync_alt</span>
+        Outlook and Teams
+      </div>
+      <h1 class="text-2xl font-bold text-[#142332] tracking-tight mb-1.5">
+        How a booking becomes an invite
+      </h1>
+      <p class="text-[15px] text-[#4f6274] font-medium leading-relaxed">
+        Booking never waits for Microsoft. Every step is recorded and retried.
+      </p>
+    </div>
+
+    <!-- ROW 1: Five Boxes Connected by Gold Arrows -->
+    <section class="mb-4">
+      <div class="flex items-stretch justify-between gap-1 w-full">
+
+        <!-- Box 1: Someone books (Plain card) -->
+        <div class="flex-1 bg-white rounded-xl p-5 shadow-sm border border-[#d6dfe7] flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-[#eef2f6]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#637588]">Step 1</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#edf1f4] text-[#234b6b] text-xs font-bold">1</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c] mb-2.5">Someone books</h3>
+            <ul class="text-[14px] text-[#334657] space-y-2 leading-snug">
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Student picks a slot or joins a group</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Tutor schedules or moves</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>CTL moves or cancels</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#f0f4f8] text-[12px] font-medium text-[#748596] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px] text-[#748596]">touch_app</span>
+            Saved at once
+          </div>
+        </div>
+
+        <!-- Gold Connector Arrow 1 -> 2 -->
+        <div class="flow-arrow-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#9a7a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <!-- Box 2: The platform records it (2px Navy Outline) -->
+        <div class="flex-1 bg-white rounded-xl p-5 shadow-sm border-2 border-[#234b6b] flex flex-col justify-between relative ring-1 ring-[#234b6b]/10">
+          <div>
+            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-[#eef2f6]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#234b6b]">Step 2 · Platform</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#234b6b] text-white text-xs font-bold">2</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c] mb-2.5">The platform records it</h3>
+            <ul class="text-[14px] text-[#334657] space-y-2 leading-snug">
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>One row in <code class="px-1 py-0.5 rounded bg-[#f0f4f8] text-[#1c3c57] text-[12px] font-semibold">tutoring_sessions</code></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>One event: <span class="font-medium text-[#1c3c57]">Created, Rescheduled, Cancelled, Attendee added</span></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Old fields kept in step by one mirror module</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#f0f4f8] text-[12px] font-medium text-[#234b6b] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">database</span>
+            One transaction
+          </div>
+        </div>
+
+        <!-- Gold Connector Arrow 2 -> 3 -->
+        <div class="flow-arrow-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#9a7a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <!-- Box 3: The queue (2px Navy Outline) -->
+        <div class="flex-1 bg-white rounded-xl p-5 shadow-sm border-2 border-[#234b6b] flex flex-col justify-between relative ring-1 ring-[#234b6b]/10">
+          <div>
+            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-[#eef2f6]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#234b6b]">Step 3 · Queue</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#234b6b] text-white text-xs font-bold">3</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c] mb-2.5">The queue</h3>
+            <ul class="text-[14px] text-[#334657] space-y-2 leading-snug">
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Each event waits in <code class="px-1 py-0.5 rounded bg-[#f0f4f8] text-[#1c3c57] text-[12px] font-semibold">outbox_deliveries</code></span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Same database transaction as the booking</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span class="font-semibold text-[#183954]">Booking never waits for Microsoft</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#f0f4f8] text-[12px] font-medium text-[#234b6b] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+            Nothing waits
+          </div>
+        </div>
+
+        <!-- Gold Connector Arrow 3 -> 4 -->
+        <div class="flow-arrow-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#9a7a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <!-- Box 4: The worker (2px Navy Outline) -->
+        <div class="flex-1 bg-white rounded-xl p-5 shadow-sm border-2 border-[#234b6b] flex flex-col justify-between relative ring-1 ring-[#234b6b]/10">
+          <div>
+            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-[#eef2f6]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#234b6b]">Step 4 · Worker</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#234b6b] text-white text-xs font-bold">4</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c] mb-2.5">The worker</h3>
+            <ul class="text-[14px] text-[#334657] space-y-2 leading-snug">
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Takes events in order per session</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Retries after 1, 5, 15, 60 minutes</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#234b6b] font-bold mt-0.5">•</span>
+                <span>Gives up after 8 tries and tells CTL</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#f0f4f8] text-[12px] font-medium text-[#234b6b] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">published_with_changes</span>
+            Retries with backoff
+          </div>
+        </div>
+
+        <!-- Gold Connector Arrow 4 -> 5 -->
+        <div class="flow-arrow-container">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#9a7a2e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <!-- Box 5: Microsoft 365 (2px Dashed Grey Outline, Pale background) -->
+        <div class="flex-1 bg-[#f4f7fa] rounded-xl p-5 shadow-sm border-2 border-dashed border-[#9ba8b5] flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-[#e2eaf0]">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#647688]">Step 5 · Microsoft</span>
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#d6e0e9] text-[#34485b] text-xs font-bold">5</span>
+            </div>
+            <div class="flex items-center gap-2 mb-2.5">
+              <h3 class="text-base font-bold text-[#172b3c]">Microsoft 365</h3>
+            </div>
+            <ul class="text-[14px] text-[#334657] space-y-2 leading-snug">
+              <li class="flex items-start gap-2">
+                <span class="text-[#597288] font-bold mt-0.5">•</span>
+                <span>Outlook invite in the organizer's calendar</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#597288] font-bold mt-0.5">•</span>
+                <span>Teams link generated for online sessions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#597288] font-bold mt-0.5">•</span>
+                <span>Attendees: student, tutor, CTL, counselor</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#e2eaf0] text-[12px] font-medium text-[#65798c] flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">cloud_done</span>
+            Microsoft Graph, server side
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Under Row 1: Return Flow Banner ("Status flows back") -->
+    <div class="mb-8 relative">
+      <div class="bg-[#fcf8ee] border border-[#e8d7a7] rounded-xl p-4 flex items-center justify-between shadow-xs">
+        <div class="flex items-center gap-3">
+          <!-- Amber Tag -->
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-bold tracking-wide uppercase bg-[#9a7a2e] text-white shrink-0">
+            <span class="material-symbols-outlined text-[14px]">reply</span>
+            status flows back
+          </span>
+          <p class="text-[14px] text-[#4d3c11] font-semibold">
+            The session row stores the event id, the Teams link and the invite status. Every screen reads it.
+          </p>
+        </div>
+
+        <!-- Visual Return Arrow Indication pointing from Box 5 toward Box 2 -->
+        <div class="flex items-center gap-2 text-xs font-medium text-[#846824] bg-[#f5ecce] px-3 py-1.5 rounded-lg border border-[#e4d19b]">
+          <span class="material-symbols-outlined text-[16px]">west</span>
+          <span>From Microsoft 365 → back to Platform <code class="font-bold text-[#564210]">tutoring_sessions</code></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: Three White Boxes -->
+    <section class="grid grid-cols-3 gap-6 mb-8">
+
+      <!-- Row 2 Box 1: Also from the same events -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-[#d6dfe7] flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-[#eef4f9] text-[#234b6b] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c]">Also from the same events</h3>
+          </div>
+          <p class="text-[13px] text-[#637688] mb-4">Downstream consumer workflows triggered without additional polling or race conditions:</p>
+          <ul class="text-[14px] text-[#334657] space-y-2.5 leading-relaxed">
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">mail</span>
+              <span><strong>Email notifications:</strong> Sent to student, tutor and CTL</span>
+            </li>
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">notifications</span>
+              <span><strong>In-app notification:</strong> Shown in the inbox of each person</span>
+            </li>
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">history</span>
+              <span><strong>Referral history:</strong> Activity audit log permanently logged</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-[#edf2f7] text-[12px] text-[#6d8092]">
+          Single event stream triggers multi-channel dispatch
+        </div>
+      </div>
+
+      <!-- Row 2 Box 2: Two organizer modes -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-[#d6dfe7] flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-[#eef4f9] text-[#234b6b] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c]">Two organizer modes</h3>
+          </div>
+          <p class="text-[13px] text-[#637688] mb-4">Configurable via CTL Integration Panel based on departmental governance:</p>
+          <div class="space-y-3 text-[14px] text-[#334657]">
+            <div class="p-3 rounded-lg border border-[#e1e9f0] bg-[#fbfcfd]">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-[#1c3850] flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#234b6b]"></span> Tutor's own calendar
+                </span>
+                <span class="text-[11px] font-semibold text-[#234b6b] bg-[#e6f0f8] px-2 py-0.5 rounded">Delegated</span>
+              </div>
+              <p class="text-[13px] text-[#55697d] leading-snug">The tutor organizes the meeting and controls the Teams lobby directly from Outlook.</p>
+            </div>
+            <div class="p-3 rounded-lg border border-[#e1e9f0] bg-[#fbfcfd]">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-bold text-[#1c3850] flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-[#62778a]"></span> Shared CTL mailbox
+                </span>
+                <span class="text-[11px] font-semibold text-[#54687a] bg-[#eef2f6] px-2 py-0.5 rounded">Centralized</span>
+              </div>
+              <p class="text-[13px] text-[#55697d] leading-snug">All appointments are centralized under <code class="text-[12px] bg-white px-1 py-0.5 rounded border border-[#d8e2eb]">ctl-tutoring@ku.ac.ae</code> without direct tutor delegation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-[#edf2f7] text-[12px] text-[#6d8092]">
+          Toggleable in CTL Settings without code deployments
+        </div>
+      </div>
+
+      <!-- Row 2 Box 3: Login does not change -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-[#d6dfe7] flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-[#eef4f9] text-[#234b6b] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[18px]">lock</span>
+            </div>
+            <h3 class="text-base font-bold text-[#172b3c]">Login does not change</h3>
+          </div>
+          <p class="text-[13px] text-[#637688] mb-4">Zero credential exposure or disruption to current user authentication:</p>
+          <ul class="text-[14px] text-[#334657] space-y-2.5 leading-relaxed">
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">key</span>
+              <span><strong>Standard auth:</strong> Username and password unchanged</span>
+            </li>
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">dns</span>
+              <span><strong>Server-to-server:</strong> Microsoft reached by server app secret only</span>
+            </li>
+            <li class="flex items-center gap-2.5 p-2 rounded-lg bg-[#f8fafc] border border-[#edf2f7]">
+              <span class="material-symbols-outlined text-[18px] text-[#234b6b]">alternate_email</span>
+              <span><strong>Identity mapping:</strong> Needs each person's university email</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 pt-3 border-t border-[#edf2f7] text-[12px] text-[#6d8092]">
+          No client-side OAuth prompts required for students or tutors
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Legend at the bottom -->
+    <footer class="mt-auto pt-6 border-t border-[#d8e0e7] flex items-center justify-between text-[13px] text-[#55697d]">
+      <div class="flex items-center gap-8">
+        <span class="font-bold text-[#1a2c3d] tracking-tight uppercase text-xs">Visual Legend:</span>
+
+        <!-- Legend Item 1: Navy Outline -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-4 bg-white border-2 border-[#234b6b] rounded shadow-xs"></div>
+          <span class="font-medium text-[#234b6b]"><strong class="font-semibold">2px navy outline:</strong> New in the platform</span>
+        </div>
+
+        <!-- Legend Item 2: Plain -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-4 bg-white border border-[#d6dfe7] rounded shadow-xs"></div>
+          <span class="font-medium text-[#4b5e70]"><strong class="font-semibold">Plain card:</strong> Existing application flow</span>
+        </div>
+
+        <!-- Legend Item 3: Dashed Grey -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-4 bg-[#f4f7fa] border-2 border-dashed border-[#9ba8b5] rounded"></div>
+          <span class="font-medium text-[#5e7183]"><strong class="font-semibold">Dashed outline:</strong> Outside, set up by IT (Microsoft 365)</span>
+        </div>
+
+        <!-- Legend Item 4: Gold Arrow -->
+        <div class="flex items-center gap-2">
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+            <path d="M2 6H18M18 6L13 2M18 6L13 10" stroke="#9a7a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span class="font-medium text-[#9a7a2e]"><strong class="font-semibold">Gold arrows:</strong> Asynchronous event flow</span>
+        </div>
+      </div>
+
+      <div class="text-xs text-[#7d8f9f] font-normal">
+        Early Intervention Platform · Fall 2026 · Demo data only
+      </div>
+    </footer>
+
+  </main>
+
+
+
+</body></html>

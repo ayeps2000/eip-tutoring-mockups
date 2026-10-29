@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>Student: Book Tutoring Dialog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Public Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f5fa',
+              100: '#e1ecf4',
+              200: '#c3d9e9',
+              600: '#234b6b',
+              700: '#1a3851',
+              800: '#142c40',
+              900: '#0e1f2d',
+            },
+            academic: {
+              teal: '#0d9488',
+              tealLight: '#ccfbf1',
+              purple: '#7c3aed',
+              purpleLight: '#f3e8ff',
+              emerald: '#059669',
+              emeraldLight: '#d1fae5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+<body class="font-sans bg-slate-100 text-slate-800 antialiased relative min-h-screen select-none overflow-hidden">
+
+  <!-- ============================================================== -->
+  <!-- BACKGROUND STUDENT PORTAL (Dimmed behind scrim) -->
+  <!-- ============================================================== -->
+  <div class="w-full min-h-screen bg-slate-50 flex flex-col pointer-events-none filter blur-[1px]">
+    <!-- Top Nav Bar -->
+    <header class="h-14 border-b border-slate-200 bg-white px-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="bg-[#234b6b] text-white font-bold text-xs px-2 py-1 rounded tracking-wide">EIP</div>
+        <span class="font-semibold text-slate-900 text-sm tracking-tight">Early Intervention Platform</span>
+        <span class="text-slate-300">|</span>
+        <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-0.5 rounded-full font-medium border border-slate-200">Fall 2026 · Student</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <span class="material-symbols-outlined text-slate-500 text-xl">notifications</span>
+          <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-rose-500 rounded-full"></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center text-xs font-semibold">
+            MA
+          </div>
+          <div class="text-left text-xs">
+            <div class="font-medium text-slate-900 leading-tight">Mariam Al Nuaimi</div>
+            <div class="text-slate-500 text-[11px]">Computer Engineering</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Portal Content (background context) -->
+    <main class="flex-1 max-w-6xl w-full mx-auto px-6 py-8 space-y-6">
+      <!-- Pale green welcome banner -->
+      <div class="bg-[#e8f5e9] border border-emerald-200/80 rounded-xl p-5 flex items-center justify-between shadow-sm">
+        <div class="flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-lg bg-emerald-600/10 text-emerald-800 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl">check_circle</span>
+          </div>
+          <div>
+            <h1 class="text-base font-semibold text-emerald-950">Welcome back, Mariam · Academic Support Checkpoint</h1>
+            <p class="text-xs text-emerald-800/90 mt-0.5">Your academic advisor submitted 1 supportive tutoring referral for Calculus II.</p>
+          </div>
+        </div>
+        <div class="text-xs text-emerald-900 font-medium bg-emerald-100 px-3 py-1.5 rounded-lg border border-emerald-200">
+          Midterm week support
+        </div>
+      </div>
+
+      <!-- Quick stats/cards grid -->
+      <div class="grid grid-cols-3 gap-5">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div class="text-xs font-medium text-slate-500">Active Course Referrals</div>
+          <div class="text-2xl font-bold text-slate-900 mt-1">1 Course</div>
+          <div class="text-xs text-brand-600 mt-2 font-medium flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm">schedule</span> Action requested by 24 Nov
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div class="text-xs font-medium text-slate-500">Upcoming Tutoring Sessions</div>
+          <div class="text-2xl font-bold text-slate-900 mt-1">0 Scheduled</div>
+          <div class="text-xs text-slate-500 mt-2 font-medium">Select a slot to confirm your seat</div>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div class="text-xs font-medium text-slate-500">Peer Tutoring Credits</div>
+          <div class="text-2xl font-bold text-slate-900 mt-1">Unlimited</div>
+          <div class="text-xs text-emerald-700 mt-2 font-medium">Sponsored by Academic Support</div>
+        </div>
+      </div>
+
+      <!-- Course referral banner card in portal background -->
+      <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex items-center justify-between">
+        <div class="space-y-1">
+          <div class="text-xs font-semibold uppercase tracking-wider text-brand-600">Referred Course</div>
+          <div class="text-lg font-bold text-slate-900">MATH 112 · Calculus II</div>
+          <div class="text-xs text-slate-500">Referred by Fatima Al Hammadi · Needs assistance with Integration techniques</div>
+        </div>
+        <button class="bg-[#234b6b] text-white text-xs font-semibold px-4 py-2.5 rounded-lg">Book Tutoring</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- DARK SCRIM OVERLAY -->
+  <!-- ============================================================== -->
+  <div class="fixed inset-0 bg-slate-950/65 backdrop-blur-[2px] z-50 flex items-center justify-center p-6">
+
+    <!-- ============================================================== -->
+    <!-- CENTERED DIALOG MODAL (900px, white, 12px radius) -->
+    <!-- ============================================================== -->
+    <div class="bg-white w-[900px] rounded-[12px] shadow-2xl border border-slate-200/80 flex flex-col max-h-[92vh] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- DIALOG HEADER -->
+      <div class="px-8 pt-7 pb-5 border-b border-slate-100 flex items-start justify-between bg-white relative">
+        <div class="space-y-1">
+          <div class="text-[11px] font-bold tracking-wider text-indigo-700 uppercase">
+            BOOK TUTORING
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 tracking-tight">
+            MATH 112 Calculus II
+          </h2>
+          <p class="text-xs text-slate-500 flex items-center gap-1.5 pt-0.5">
+            <span class="material-symbols-outlined text-sm text-slate-400">person</span>
+            Referred by <span class="text-slate-700 font-medium">Fatima Al Hammadi</span>
+            <span class="text-slate-300">·</span>
+            <span class="material-symbols-outlined text-sm text-amber-500">hourglass_top</span>
+            book by <span class="text-slate-700 font-medium">24 Nov 2026</span>
+            <span class="text-indigo-600 font-semibold bg-indigo-50 px-2 py-0.5 rounded-md border border-indigo-100 ml-1">26 days left</span>
+          </p>
+        </div>
+
+        <!-- Close "X" Button -->
+        <button class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors" title="Close dialog">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- DIALOG BODY (Scrollable tutor cards) -->
+      <div class="px-8 py-6 overflow-y-auto space-y-6 bg-slate-50/50 flex-1">
+
+        <!-- TUTOR CARD 1: Amal Hassan -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4 hover:border-slate-300 transition-colors">
+          <!-- Tutor Header -->
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-slate-800 text-white font-semibold text-sm flex items-center justify-center border-2 border-slate-100 shadow-inner">
+                AH
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-slate-900 text-base">Amal Hassan</h3>
+                  <span class="bg-teal-50 text-teal-700 border border-teal-200/90 text-[11px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                    Peer tutor
+                  </span>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+                  Published availability: <span class="text-slate-700 font-medium">Mon–Thu 4:00–6:00 PM</span>
+                  <span class="text-slate-300">·</span>
+                  <span class="material-symbols-outlined text-sm text-slate-400">location_on</span>
+                  Library Learning Commons
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-[11px] text-slate-400 bg-slate-100 px-2 py-1 rounded font-medium">Mathematics & Physics Dept</span>
+            </div>
+          </div>
+
+          <!-- Group Option Row (Lavender tinted) -->
+          <div class="bg-purple-50/70 border border-purple-200/80 rounded-lg p-3.5 flex items-center justify-between">
+            <div class="space-y-1">
+              <div class="text-xs font-bold text-purple-950 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-purple-700 text-base">groups</span>
+                Group · Thursdays 4:00 PM · Main - Hive
+              </div>
+              <div class="text-xs text-purple-800/90 flex items-center gap-2">
+                <span>Weekly from 12 Nov to 22 Jan</span>
+                <span class="text-purple-300">·</span>
+                <!-- Six-bar seat meter: 4 filled, 2 empty -->
+                <div class="flex items-center gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <div class="w-2 h-3 rounded-sm bg-purple-700"></div>
+                    <div class="w-2 h-3 rounded-sm bg-purple-700"></div>
+                    <div class="w-2 h-3 rounded-sm bg-purple-700"></div>
+                    <div class="w-2 h-3 rounded-sm bg-purple-700"></div>
+                    <div class="w-2 h-3 rounded-sm bg-purple-200"></div>
+                    <div class="w-2 h-3 rounded-sm bg-purple-200"></div>
+                  </div>
+                  <span class="font-semibold text-purple-950 ml-1">4 of 6 seats</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Join group green pill button -->
+            <button class="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5 transition-all">
+              <span class="material-symbols-outlined text-sm">group_add</span>
+              Join group
+            </button>
+          </div>
+
+          <!-- Divider & One-to-one Booking Controls -->
+          <div class="pt-2 border-t border-slate-100 space-y-3">
+            <div class="text-xs font-semibold text-slate-700 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm text-slate-500">person</span>
+              Or book a one-to-one session
+            </div>
+
+            <div class="flex items-center gap-4">
+              <!-- Date select -->
+              <div class="relative w-56">
+                <label class="block text-[11px] font-medium text-slate-400 mb-1">Select date</label>
+                <div class="flex items-center justify-between bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-800 cursor-pointer shadow-sm hover:border-slate-400">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-slate-500">calendar_today</span>
+                    <span class="font-medium text-slate-900">Thu 5 Nov 2026</span>
+                  </div>
+                  <span class="material-symbols-outlined text-sm text-slate-400">expand_more</span>
+                </div>
+              </div>
+
+              <!-- Slot chips -->
+              <div class="flex-1">
+                <label class="block text-[11px] font-medium text-slate-400 mb-1">Available slots (60 min)</label>
+                <div class="flex items-center gap-2">
+                  <!-- Selected, filled indigo chip -->
+                  <button class="bg-indigo-600 text-white text-xs font-semibold px-3.5 py-2 rounded-lg shadow-sm flex items-center gap-1.5 ring-2 ring-indigo-600 ring-offset-1">
+                    <span class="material-symbols-outlined text-sm">check_circle</span>
+                    4:00 PM
+                  </button>
+                  <!-- Outline chip -->
+                  <button class="bg-white border border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50 text-xs font-medium px-3.5 py-2 rounded-lg shadow-sm flex items-center gap-1.5 transition-colors">
+                    <span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+                    5:00 PM
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TUTOR CARD 2: Dana Haddad -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4 hover:border-slate-300 transition-colors">
+          <!-- Tutor Header -->
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-slate-700 text-white font-semibold text-sm flex items-center justify-center border-2 border-slate-100 shadow-inner">
+                DH
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-slate-900 text-base">Dana Haddad</h3>
+                  <span class="bg-purple-50 text-purple-700 border border-purple-200/90 text-[11px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                    Faculty tutor
+                  </span>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm text-slate-400">schedule</span>
+                  Published availability: <span class="text-slate-700 font-medium">Wednesdays 9:00–11:00 AM</span>
+                  <span class="text-slate-300">·</span>
+                  <span class="material-symbols-outlined text-sm text-slate-400">meeting_room</span>
+                  Building 1 Room 1102 · by appointment
+                </p>
+              </div>
+            </div>
+            <div class="text-right">
+              <span class="text-[11px] text-slate-400 bg-slate-100 px-2 py-1 rounded font-medium">Faculty of Science</span>
+            </div>
+          </div>
+
+          <!-- Muted note & Proposal form inputs -->
+          <div class="bg-slate-50 border border-slate-200/80 rounded-lg p-3.5 space-y-3">
+            <div class="flex items-center gap-2 text-xs text-slate-500">
+              <span class="material-symbols-outlined text-sm text-amber-500">info</span>
+              <span>Appointment-based tutor: choose a date and time to propose. The tutor must confirm.</span>
+            </div>
+
+            <!-- Date and time input fields -->
+            <div class="grid grid-cols-2 gap-4 pt-1">
+              <div>
+                <label class="block text-[11px] font-medium text-slate-500 mb-1">Proposed date</label>
+                <div class="flex items-center justify-between bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700 cursor-pointer shadow-sm hover:border-slate-400">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-slate-400">event</span>
+                    <span class="text-slate-700">Wed 11 Nov 2026</span>
+                  </div>
+                  <span class="material-symbols-outlined text-sm text-slate-400">expand_more</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-medium text-slate-500 mb-1">Proposed time</label>
+                <div class="flex items-center justify-between bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700 cursor-pointer shadow-sm hover:border-slate-400">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-slate-400">schedule</span>
+                    <span class="text-slate-700">10:00 AM – 11:00 AM</span>
+                  </div>
+                  <span class="material-symbols-outlined text-sm text-slate-400">expand_more</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DIALOG FOOTER -->
+      <div class="px-8 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+        <!-- Muted legal/details text -->
+        <p class="text-[11px] text-slate-500 leading-relaxed max-w-lg">
+          60-minute sessions · UAE time (UTC+4) · An invite goes to your university email. The Teams link appears on your portal once sent.
+        </p>
+
+        <!-- Action buttons right -->
+        <div class="flex items-center gap-2.5 shrink-0">
+          <button class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold px-4 py-2.5 rounded-lg shadow-sm transition-colors">
+            Cancel
+          </button>
+          <button class="bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-xs font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-colors flex items-center gap-1.5">
+            Continue
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

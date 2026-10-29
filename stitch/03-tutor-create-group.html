@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tutor: Create group - Early Intervention Platform</title>
+<!-- Public Sans Font & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed-dim": "#a4caf0",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#d4e4f8",
+            "inverse-primary": "#a4caf0",
+            "surface-bright": "#f7f9ff",
+            "error": "#ba1a1a",
+            "secondary": "#006e24",
+            "error-container": "#ffdad6",
+            "background": "#edf1f4",
+            "surface-container-low": "#edf4ff",
+            "on-primary": "#ffffff",
+            "primary-container": "#234b6b",
+            "on-background": "#0c1d2b",
+            "inverse-surface": "#223241",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#e7f4ea",
+            "on-tertiary-container": "#c0aaff",
+            "tertiary-container": "#50339c",
+            "primary": "#033453",
+            "on-primary-fixed-variant": "#224a6a",
+            "on-secondary-fixed-variant": "#005319",
+            "inverse-on-surface": "#e8f2ff",
+            "on-primary-container": "#95bbe0",
+            "surface-dim": "#cbdcef",
+            "on-tertiary-fixed-variant": "#4f319b",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#cebdff",
+            "surface-container": "#e2efff",
+            "on-primary-fixed": "#001d32",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#d9eafe",
+            "outline-variant": "#cfd7df",
+            "on-secondary-container": "#1f6f43",
+            "on-secondary-fixed": "#002106",
+            "on-tertiary-fixed": "#21005e",
+            "surface-variant": "#d4e4f8",
+            "on-surface-variant": "#42474d",
+            "secondary-fixed-dim": "#71dd7a",
+            "tertiary-fixed": "#e8ddff",
+            "surface": "#ffffff",
+            "tertiary": "#391685",
+            "surface-tint": "#3c6283",
+            "secondary-fixed": "#8dfa94",
+            "primary-fixed": "#cde5ff",
+            "outline": "#72777e",
+            "on-surface": "#142131"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Public Sans", "sans-serif"],
+            "display": ["Public Sans", "sans-serif"],
+            "body": ["Public Sans", "sans-serif"],
+            "label": ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #edf1f4;
+      color: #142131;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface antialiased flex flex-col font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 left-0 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant z-40 px-6 flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<!-- Brand Monogram EIP -->
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center font-bold text-xs tracking-tight shadow-xs">
+        EIP
+      </div>
+<div class="flex items-center gap-2.5">
+<span class="font-bold text-sm tracking-tight text-primary font-headline">Early Intervention Platform</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-surface-container-high text-on-surface-variant">
+          Fall 2026 · Peer tutor
+        </span>
+</div>
+</div>
+<!-- Trailing Actions & Profile -->
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-white"></span>
+</button>
+<div class="h-6 w-px bg-outline-variant"></div>
+<!-- User avatar pill -->
+<div class="flex items-center gap-2.5 py-1 px-1.5 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-semibold text-xs border border-white shadow-xs">
+          AH
+        </div>
+<div class="text-left leading-tight hidden sm:block">
+<div class="text-xs font-semibold text-on-surface">Amal Hassan</div>
+<div class="text-[11px] text-on-surface-variant">Mathematics &amp; Physics · Peer tutor</div>
+</div>
+</div>
+</div>
+</header>
+<!-- BODY WRAPPER: Left Sidebar + Centered Content Canvas -->
+<div class="flex pt-14 min-h-screen">
+<!-- LEFT SIDEBAR -->
+<aside class="fixed top-14 left-0 bottom-0 w-[220px] bg-surface-container-lowest border-r border-outline-variant z-30 flex flex-col justify-between p-3 select-none">
+<!-- Main Navigation -->
+<nav class="space-y-1">
+<!-- Tutor Workspace Section Header -->
+<div class="px-3 pt-2 pb-2">
+<p class="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">Tutor Workspace</p>
+<p class="text-[11px] text-outline">Fall 2026 · Academic Support</p>
+</div>
+<!-- 1. My sessions -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+<span>My sessions</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface-variant">5</span>
+</a>
+<!-- 2. My groups (ACTIVE) -->
+<a aria-current="page" class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold bg-secondary-container text-on-secondary-container border-l-4 border-secondary transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span>My groups</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-bold bg-[#d4ebd8] text-secondary">1</span>
+</a>
+<!-- 3. My availability -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>My availability</span>
+</div>
+<span class="text-[11px] text-outline font-medium">4 days</span>
+</a>
+<!-- 4. My tutoring courses -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>My tutoring courses</span>
+</div>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container-high text-on-surface-variant">2</span>
+</a>
+<!-- 5. Request schedule update -->
+<a class="flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+<span>Request schedule update</span>
+</div>
+</a>
+</nav>
+<!-- Footer Navigation Items -->
+<div class="pt-4 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span>Help &amp; Guidelines</span>
+</a>
+<a class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CANVAS CONTENT -->
+<main class="ml-[220px] flex-1 py-8 px-8 flex justify-center">
+<div class="w-full max-w-[880px]">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-outline mb-3">
+<a class="text-primary-container font-medium hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>My groups</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Create group</span>
+</nav>
+<!-- Page Header -->
+<div class="mb-6">
+<h1 class="text-2xl font-bold tracking-tight text-on-surface font-headline">Create group</h1>
+<p class="text-xs text-on-surface-variant mt-1">
+            A weekly session for several of your referred students in one course. Times come from your published timetable.
+          </p>
+</div>
+<!-- Form Card Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-8 space-y-6">
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- ROW 1: Course & Group Name -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Course Selection -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="course-select">
+                  Course <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary appearance-none cursor-pointer" id="course-select">
+<option selected="">MATH 112 Calculus II</option>
+<option>PHYS 101 General Physics I</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Group Name Input -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="group-name-input">
+                  Group name <span class="text-error">*</span>
+</label>
+<input class="w-full h-[38px] px-3 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors" id="group-name-input" type="text" value="MATH 112 · Thursday 4 PM">
+<p class="text-[11px] text-outline mt-1 font-normal">prefilled, edit if you like</p>
+</div>
+</div>
+<!-- ROW 2: Weekday, Start Time, Where -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Weekday -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="weekday-select">
+                  Weekday <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary appearance-none cursor-pointer" id="weekday-select">
+<option selected="">Thursday</option>
+<option>Monday</option>
+<option>Tuesday</option>
+<option>Wednesday</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Start Time -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="start-time-select">
+                  Start time <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary appearance-none cursor-pointer" id="start-time-select">
+<option selected="">4:00 PM</option>
+<option>4:30 PM</option>
+<option>5:00 PM</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+<p class="text-[11px] text-outline mt-1 font-normal">your hours: Mon–Thu 4–6 PM</p>
+</div>
+<!-- Where -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="where-select">
+                  Where <span class="text-error">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-[38px] px-3 pr-8 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary appearance-none cursor-pointer" id="where-select">
+<option selected="">Main - Hive</option>
+<option>Science Hub - Lab 2B</option>
+<option>Online (Microsoft Teams)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- ROW 3: Seats, First session, Last session -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Seats -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="seats-input">
+                  Seats <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[38px] px-3 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" id="seats-input" max="12" min="2" type="number" value="6">
+<div class="absolute right-2.5 top-2.5 flex items-center gap-1 text-[11px] text-outline pointer-events-none">
+<span>students</span>
+</div>
+</div>
+</div>
+<!-- First session -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="first-session-input">
+                  First session <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[38px] pl-9 pr-3 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" id="first-session-input" type="text" value="06 Nov 2026">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-outline pointer-events-none">calendar_month</span>
+</div>
+</div>
+<!-- Last session -->
+<div>
+<label class="block text-xs font-semibold text-on-surface mb-1.5" for="last-session-input">
+                  Last session <span class="text-error">*</span>
+</label>
+<div class="relative">
+<input class="w-full h-[38px] pl-9 pr-3 rounded-lg border border-outline-variant bg-white text-xs font-medium text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary" id="last-session-input" type="text" value="22 Jan 2027">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-outline pointer-events-none">calendar_month</span>
+</div>
+</div>
+</div>
+<!-- Preview Strip -->
+<div class="rounded-lg bg-secondary-container border border-[#cbe8d1] px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-secondary">calendar_month</span>
+<div class="flex-1 text-xs">
+<span class="font-semibold text-on-secondary-container">12 weekly sessions, 6 Nov to 22 Jan</span>
+<span class="text-outline mx-1.5">·</span>
+<span class="text-on-secondary-container opacity-90">Every Thursday at 4:00 PM in Main - Hive (max 6 seats)</span>
+</div>
+
+</div>
+<!-- Information note -->
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-[17px] text-outline mt-0.5 shrink-0">info</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                Saving puts the whole series in your Outlook calendar now. Students are added to the invite as they join.
+              </p>
+</div>
+<!-- Card Divider -->
+<div class="pt-2 border-t border-outline-variant flex items-center justify-end">
+
+<!-- Footer Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="h-[36px] px-4 rounded-lg border border-outline-variant bg-white text-xs font-semibold text-on-surface hover:bg-surface-container-low transition-colors shadow-2xs" type="button">
+                  Cancel
+                </button>
+<button class="h-[36px] px-5 rounded-lg bg-secondary text-white text-xs font-semibold hover:bg-on-secondary-container transition-colors shadow-xs flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Create group</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Supportive Micro-context Cards (Non-distracting Academic details) -->
+
+</div>
+</main>
+</div>
+</body></html>

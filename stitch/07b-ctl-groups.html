@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280, initial-scale=1.0">
+  <title>CTL: Groups Oversight</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Public Sans"', 'sans-serif'],
+          },
+          colors: {
+            appBg: '#edf1f4',
+            navyPrimary: '#234b6b',
+            navyDark: '#173650',
+            textMain: '#142131',
+            textSecondary: '#3f5061',
+            textMuted: '#667687',
+            cardBorder: '#cfd7df',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Public Sans', sans-serif;
+      background-color: #edf1f4;
+      color: #142131;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center bg-[#edf1f4]">
+
+  <!-- Top Bar: White 56px, no left sidebar -->
+  <header class="w-full bg-white border-b border-[#cfd7df] h-14 sticky top-0 z-50">
+    <div class="max-w-[1280px] w-full mx-auto px-8 h-full flex items-center justify-between">
+      <!-- Left: Logo & Titles -->
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded bg-[#234b6b] text-white flex items-center justify-center font-bold text-xs tracking-tight shadow-sm">
+          EIP
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-sm tracking-tight text-[#142131]">Early Intervention Platform</span>
+          <span class="text-xs text-[#cfd7df]">|</span>
+          <span class="text-xs font-medium text-[#3f5061]">Fall 2026 · CTL</span>
+        </div>
+      </div>
+
+      <!-- Right: Notifications & Profile -->
+      <div class="flex items-center gap-4">
+        <button class="relative p-1.5 text-[#3f5061] hover:text-[#142131] transition-colors rounded-full hover:bg-[#edf1f4] focus:outline-none" aria-label="Notifications">
+          <span class="material-symbols-outlined text-[22px]">notifications</span>
+          <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
+        </button>
+        <div class="flex items-center gap-2.5 pl-2 border-l border-[#cfd7df]">
+          <div class="w-8 h-8 rounded-full bg-[#234b6b] text-white flex items-center justify-center font-semibold text-xs tracking-wide">
+            CTL
+          </div>
+          <div class="flex flex-col text-left">
+            <span class="text-xs font-semibold text-[#142131] leading-tight">Dr. Noura Salem</span>
+            <span class="text-[11px] text-[#667687] leading-tight">Academic Specialist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container: 1280px wide -->
+  <div class="flex flex-1 min-h-[calc(100vh-56px)]"><aside class="w-[220px] shrink-0 bg-white border-r border-[#cfd7df] flex flex-col justify-between p-3 select-none"><div class="space-y-4"><div class="px-2 pt-1 pb-2"><h2 class="text-[11px] font-bold tracking-wider text-[#667687] uppercase">Navigation</h2></div><nav class="space-y-1"><a class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] bg-[#e3e9ee] text-[#234b6b] font-semibold" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Oversight</span></span><span class="text-[11px] px-1.5 py-0.5 rounded bg-[#f4f6f8] text-[#667687] font-medium">12</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-[#3f5061] hover:bg-[#f4f6f8]" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">school</span><span>Tutors</span></span><span class="text-[11px] px-1.5 py-0.5 rounded bg-[#f4f6f8] text-[#667687] font-medium">18</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-[#3f5061] hover:bg-[#f4f6f8]" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Courses</span></span><span class="text-[11px] px-1.5 py-0.5 rounded bg-[#f4f6f8] text-[#667687] font-medium">6</span></a><a class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-[#3f5061] hover:bg-[#f4f6f8]" href="#"><span class="flex items-center gap-3"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span>Reports</span></span></a></nav></div><div class="border-t border-[#cfd7df] pt-2 space-y-1"><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] text-[#3f5061]" href="#"><span class="material-symbols-outlined text-[18px]">help_outline</span><span>Help &amp; Guidelines</span></a><a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] text-[#3f5061]" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a></div></aside><main class="w-full px-8 py-6 flex-1 flex flex-col min-w-0">
+
+    <!-- Hero Section: Navy gradient with title & tabs -->
+    <section class="w-full rounded-[10px] bg-gradient-to-r from-[#173650] via-[#234b6b] to-[#2c5b80] text-white p-6 pb-0 shadow-sm border border-[#234b6b]/40 mb-6">
+      <div class="mb-5">
+        <h1 class="text-xl font-bold tracking-tight text-white mb-1">
+          What is happening with our tutors and students?
+        </h1>
+        <p class="text-xs text-white/75 font-normal">
+          Weekly groups run by tutors, their seats and their invites.
+        </p>
+      </div>
+
+      <!-- Tab bar -->
+      <div class="flex items-center gap-1 border-b border-white/15">
+        <a href="#" class="px-4 py-2.5 text-xs font-medium text-white/70 hover:text-white transition-colors">
+          Referrals
+        </a>
+        <a href="#" class="px-4 py-2.5 text-xs font-medium text-white/70 hover:text-white transition-colors">
+          Tutors
+        </a>
+        <a href="#" class="px-4 py-2.5 text-xs font-medium text-white/70 hover:text-white transition-colors">
+          Courses
+        </a>
+        <a href="#" class="px-4 py-2.5 text-xs font-semibold text-white border-b-2 border-white -mb-[1px]">
+          Groups
+        </a>
+        <a href="#" class="px-4 py-2.5 text-xs font-medium text-white/70 hover:text-white transition-colors">
+          Integration
+        </a>
+      </div>
+    </section>
+
+    <!-- Toolbar Above Table -->
+    <div class="flex items-center justify-between mb-4">
+      <div class="text-sm font-semibold text-[#142131]">
+        4 groups this term <span class="text-[#667687] font-normal">·</span> <span class="text-[#85651d] font-medium">1 tentative</span>
+      </div>
+      <button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-[8px] bg-[#234b6b] hover:bg-[#1a3850] text-white text-xs font-semibold shadow-sm transition-colors">
+        <span class="material-symbols-outlined text-[16px]">add</span>
+        Create group
+      </button>
+    </div>
+
+    <!-- Table Card Container -->
+    <div class="bg-white rounded-[10px] border border-[#cfd7df] shadow-sm overflow-hidden mb-4">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-[#f7fafc] border-b border-[#cfd7df] text-[11px] font-semibold uppercase tracking-wider text-[#667687]">
+              <th class="py-3 px-4">Group</th>
+              <th class="py-3 px-4">Tutor</th>
+              <th class="py-3 px-4">Course</th>
+              <th class="py-3 px-4">Schedule</th>
+              <th class="py-3 px-4">Seats</th>
+              <th class="py-3 px-4">Next session</th>
+              <th class="py-3 px-4">Invites</th>
+              <th class="py-3 px-4 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#cfd7df] text-xs">
+            
+            <!-- Row 1: MATH 112 Thursday -->
+            <tr class="hover:bg-[#fbfcfd] transition-colors">
+              <td class="py-4 px-4 align-top">
+                <div class="font-semibold text-[#142131]">MATH 112 Thursday</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="font-medium text-[#142131]">Amal Hassan</div>
+                <div class="text-[11px] text-[#667687]">Peer tutor</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#eef3f7] text-[#234b6b] border border-[#cfd7df]">
+                  MATH 112
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Thursdays 4:00–5:00 PM, Main - Hive</div>
+                <div class="text-[11px] text-[#667687] mt-0.5">6 Nov to 22 Jan</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                  </div>
+                  <span class="text-[11px] font-medium text-[#3f5061] whitespace-nowrap">4 of 6</span>
+                </div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Thu 12 Nov</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#e4f1ea] text-[#356b53]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#356b53]"></span>
+                  Invite sent
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top text-right">
+                <div class="inline-flex items-center justify-end gap-1 text-[#3f5061]">
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Add student">
+                    <span class="material-symbols-outlined text-[18px]">person_add</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="View roster">
+                    <span class="material-symbols-outlined text-[18px]">group</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Change tutor">
+                    <span class="material-symbols-outlined text-[18px]">switch_account</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Reschedule">
+                    <span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-red-50 hover:text-red-600 transition-colors" title="End series">
+                    <span class="material-symbols-outlined text-[18px]">cancel</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 2: MATH 111 Monday -->
+            <tr class="hover:bg-[#fbfcfd] transition-colors">
+              <td class="py-4 px-4 align-top">
+                <div class="font-semibold text-[#142131]">MATH 111 Monday</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="font-medium text-[#142131]">Amal Hassan</div>
+                <div class="text-[11px] text-[#667687]">Peer tutor</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#eef3f7] text-[#234b6b] border border-[#cfd7df]">
+                  MATH 111
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Mondays 5:00–6:00 PM, Online</div>
+                <div class="text-[11px] text-[#667687] mt-0.5">3 Nov to 19 Jan</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                  </div>
+                  <span class="text-[11px] font-medium text-[#3f5061] whitespace-nowrap">2 of 6</span>
+                </div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Mon 9 Nov</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#e3e9ee] text-[#234b6b]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#234b6b]"></span>
+                  Pending
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top text-right">
+                <div class="inline-flex items-center justify-end gap-1 text-[#3f5061]">
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Add student">
+                    <span class="material-symbols-outlined text-[18px]">person_add</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="View roster">
+                    <span class="material-symbols-outlined text-[18px]">group</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Change tutor">
+                    <span class="material-symbols-outlined text-[18px]">switch_account</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Reschedule">
+                    <span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-red-50 hover:text-red-600 transition-colors" title="End series">
+                    <span class="material-symbols-outlined text-[18px]">cancel</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 3: MATH 112 Tuesday (Tentative) -->
+            <tr class="hover:bg-[#fbfcfd] transition-colors bg-[#fffdfa]/50">
+              <td class="py-4 px-4 align-top">
+                <div class="font-semibold text-[#142131]">MATH 112 Tuesday</div>
+                <div class="mt-1 flex items-center gap-1.5 flex-wrap">
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#fbf1d9] text-[#85651d] border border-dashed border-[#85651d]/40">
+                    <span class="w-1 h-1 rounded-full bg-[#85651d]"></span>
+                    Tentative
+                  </span>
+                </div>
+                <div class="text-[11px] text-[#667687] mt-1">
+                  set up by CTL · waiting for Amal Hassan
+                </div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="font-medium text-[#142131]">Amal Hassan</div>
+                <div class="text-[11px] text-[#667687]">Peer tutor</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#eef3f7] text-[#234b6b] border border-[#cfd7df]">
+                  MATH 112
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Tuesdays 5:00–6:00 PM, SAN</div>
+                <div class="text-[11px] text-[#667687] mt-0.5">10 Nov to 19 Jan</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#356b53]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#cfd7df]"></span>
+                  </div>
+                  <span class="text-[11px] font-medium text-[#3f5061] whitespace-nowrap">1 of 6</span>
+                </div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Tue 10 Nov</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#e3e9ee] text-[#234b6b]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#234b6b]"></span>
+                  Pending
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top text-right">
+                <div class="inline-flex items-center justify-end gap-1 text-[#3f5061]">
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Add student">
+                    <span class="material-symbols-outlined text-[18px]">person_add</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="View roster">
+                    <span class="material-symbols-outlined text-[18px]">group</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Change tutor">
+                    <span class="material-symbols-outlined text-[18px]">switch_account</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Reschedule">
+                    <span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+                  </button>
+                  <button class="p-1 rounded hover:bg-red-50 hover:text-red-600 transition-colors" title="End series">
+                    <span class="material-symbols-outlined text-[18px]">cancel</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 4: PHYS 121 Wednesday -->
+            <tr class="hover:bg-[#fbfcfd] transition-colors">
+              <td class="py-4 px-4 align-top">
+                <div class="font-semibold text-[#142131]">PHYS 121 Wednesday</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="font-medium text-[#142131]">Hamad Juma</div>
+                <div class="text-[11px] text-[#667687]">Peer tutor</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#eef3f7] text-[#234b6b] border border-[#cfd7df]">
+                  PHYS 121
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Wednesdays 1:00–2:00 PM, Online</div>
+                <div class="text-[11px] text-[#667687] mt-0.5">4 Nov to 20 Jan</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                    <span class="w-1.5 h-3.5 rounded-sm bg-[#c98318]"></span>
+                  </div>
+                  <span class="text-[11px] font-semibold text-[#85651d] whitespace-nowrap">6 of 6</span>
+                </div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <div class="text-[#142131] font-medium">Wed 4 Nov</div>
+              </td>
+              <td class="py-4 px-4 align-top">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-[#e4f1ea] text-[#356b53]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#356b53]"></span>
+                  Invite sent
+                </span>
+              </td>
+              <td class="py-4 px-4 align-top text-right">
+                <div class="inline-flex items-center justify-end gap-1">
+                  <!-- Disabled Full button -->
+                  <span class="px-2 py-1 rounded text-[11px] font-medium bg-[#edf1f4] text-[#667687] cursor-not-allowed">
+                    Full
+                  </span>
+                  <button class="p-1 rounded text-[#3f5061] hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="View roster">
+                    <span class="material-symbols-outlined text-[18px]">group</span>
+                  </button>
+                  <button class="p-1 rounded text-[#3f5061] hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Change tutor">
+                    <span class="material-symbols-outlined text-[18px]">switch_account</span>
+                  </button>
+                  <button class="p-1 rounded text-[#3f5061] hover:bg-[#edf1f4] hover:text-[#142131] transition-colors" title="Reschedule">
+                    <span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+                  </button>
+                  <button class="p-1 rounded text-[#3f5061] hover:bg-red-50 hover:text-red-600 transition-colors" title="End series">
+                    <span class="material-symbols-outlined text-[18px]">cancel</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footnote below table -->
+    <div class="flex items-start gap-2 text-xs text-[#667687] bg-[#eef3f7]/60 border border-[#cfd7df] rounded-[8px] p-3">
+      <span class="material-symbols-outlined text-[18px] text-[#234b6b] shrink-0 mt-0.5">info</span>
+      <p class="leading-relaxed">
+        Students only see groups with free seats. CTL can add any referred student for the course; the referral moves to that tutor. A group CTL creates is tentative until the tutor confirms, edits or moves it.
+      </p>
+    </div>
+
+  </main></div>
+
+  <!-- Clean footer branding -->
+  <footer class="w-full px-8 py-4 border-t border-[#cfd7df] flex items-center justify-between text-[11px] text-[#667687] ml-[220px]">
+    <span>Early Intervention Platform · Fall 2026 · Demo data only.</span>
+    <span>Center for Teaching &amp; Learning (CTL)</span>
+  </footer>
+
+
+
+</body></html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Early Intervention Platform - Your next steps</title>
+<!-- Material Symbols Outlined font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Public Sans font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#cbdcef",
+            "outline-variant": "#c2c7ce",
+            "tertiary-fixed": "#e8ddff",
+            "primary": "#033453",
+            "secondary-container": "#8af791",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#8dfa94",
+            "on-tertiary-container": "#c0aaff",
+            "on-background": "#0c1d2b",
+            "on-error-container": "#93000a",
+            "primary-container": "#234b6b",
+            "surface-container-low": "#edf4ff",
+            "on-surface-variant": "#42474d",
+            "surface-bright": "#f7f9ff",
+            "on-primary-fixed": "#001d32",
+            "inverse-on-surface": "#e8f2ff",
+            "surface-container-highest": "#d4e4f8",
+            "tertiary": "#391685",
+            "on-tertiary": "#ffffff",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#223241",
+            "on-primary-container": "#95bbe0",
+            "surface-container-high": "#d9eafe",
+            "surface": "#f7f9ff",
+            "on-primary": "#ffffff",
+            "secondary": "#006e24",
+            "on-secondary-container": "#007326",
+            "on-primary-fixed-variant": "#224a6a",
+            "tertiary-fixed-dim": "#cebdff",
+            "on-secondary-fixed-variant": "#005319",
+            "on-tertiary-fixed": "#21005e",
+            "surface-container": "#e2efff",
+            "outline": "#72777e",
+            "on-tertiary-fixed-variant": "#4f319b",
+            "secondary-fixed-dim": "#71dd7a",
+            "primary-fixed": "#cde5ff",
+            "primary-fixed-dim": "#a4caf0",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-primary": "#a4caf0",
+            "surface-tint": "#3c6283",
+            "background": "#edf1f4",
+            "surface-variant": "#d4e4f8",
+            "tertiary-container": "#50339c",
+            "on-surface": "#0c1d2b",
+            "on-secondary-fixed": "#002106"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Public Sans", "sans-serif"],
+            "display": ["Public Sans", "sans-serif"],
+            "body": ["Public Sans", "sans-serif"],
+            "label": ["Public Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col antialiased">
+<!-- Top App Navigation Shell (Student Portal Specification) -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant/50 h-14 sticky top-0 z-50 shadow-sm">
+<div class="max-w-[1280px] h-full mx-auto px-6 flex items-center justify-between">
+<!-- Left: Logo & Context Title -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-xs tracking-wider shadow-sm">
+          EIP
+        </div>
+<div class="flex items-center gap-2">
+<span class="font-headline text-base font-bold text-primary tracking-tight">Early Intervention Platform</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-primary-container">
+            Fall 2026 · Student
+          </span>
+</div>
+</div>
+<!-- Right: Notifications & Student Identity -->
+<div class="flex items-center gap-4">
+<!-- Bell Notification with red alert badge -->
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<div class="h-5 w-px bg-outline-variant/60"></div>
+<!-- Student Profile Avatar & Name -->
+<div class="flex items-center gap-2.5 pl-1">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline text-xs font-semibold ring-2 ring-surface-container">
+            HN
+          </div>
+<div class="flex flex-col text-left">
+<span class="text-xs font-semibold text-primary leading-tight">Hessa Al Nuaimi</span>
+<span class="text-[10px] text-on-surface-variant font-medium">Student Portal</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas Centered Layout (max-w-[1040px]) -->
+<main class="w-full max-w-[1040px] mx-auto px-6 py-8 flex-1">
+<!-- Welcome Banner Card -->
+<div class="bg-secondary-container/20 border border-secondary-container/80 rounded-xl p-6 flex items-start gap-4 mb-8 shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shrink-0 border border-secondary-container shadow-xs">
+<span class="material-symbols-outlined text-[24px]" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<h1 class="font-headline font-bold text-2xl text-primary tracking-tight">Your next steps</h1>
+<p class="text-secondary text-sm mt-1 font-normal">Hessa, here is what is coming up. All times are UAE time.</p>
+</div>
+</div>
+<!-- Sessions Section Header -->
+<div class="flex items-center justify-between mb-4 px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline text-sm font-semibold text-primary uppercase tracking-wider">Scheduled Interventions</span>
+<span class="bg-surface-container text-primary-container text-xs font-bold px-2 py-0.5 rounded-full">3 active</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+        Gulf Standard Time (GST · UTC+4)
+      </span>
+</div>
+<!-- Card Stack (3 White Cards) -->
+<div class="space-y-4">
+<!-- Card 1: 1-on-1 Tutoring for MATH 112 -->
+<article class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-6 shadow-sm border-l-4 border-l-secondary flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all hover:border-outline-variant">
+<!-- Left Visual Ring Countdown -->
+<div class="flex items-center gap-4 shrink-0">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 64 64">
+<!-- Background Ring Track -->
+<circle class="text-secondary-container/50" cx="32" cy="32" fill="none" r="26" stroke="currentColor" stroke-width="4"></circle>
+<!-- Progress Ring Accent -->
+<circle class="text-secondary" cx="32" cy="32" fill="none" r="26" stroke="currentColor" stroke-dasharray="163.36" stroke-dashoffset="40" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center px-1">
+<span class="text-[13px] font-bold text-on-surface leading-tight">26</span>
+<span class="text-[9px] font-medium text-on-surface-variant uppercase tracking-tighter">days left</span>
+</div>
+</div>
+</div>
+<!-- Middle Content Column -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5 flex-wrap">
+<span class="text-[11px] uppercase tracking-wider font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">
+              BOOKED
+            </span>
+<span class="text-xs text-on-surface-variant font-medium">1-on-1 Session</span>
+</div>
+<h2 class="text-lg font-bold text-on-surface leading-snug">Tutoring for MATH 112 Calculus II</h2>
+<div class="mt-2 space-y-1">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="school">school</span>
+<span>Tutor: Amal Hassan</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="calendar_today">calendar_today</span>
+<span>Thu 5 Nov 2026, 4:00 PM (UAE) · Online</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="assignment_ind">assignment_ind</span>
+<span>Referred by Fatima Al Hammadi · 19 Oct</span>
+</div>
+</div>
+<div class="mt-3.5 flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1.5 bg-secondary-container/40 text-on-secondary-container text-xs font-semibold px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Confirmed
+            </span>
+<span class="text-xs text-outline font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="mail">mail</span>
+              Invite sent to your university email
+            </span>
+</div>
+</div>
+<!-- Right Action Column -->
+<div class="flex flex-row md:flex-col items-center md:items-end justify-end gap-2.5 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-outline-variant/40">
+<!-- Join Teams Button -->
+<button class="w-full md:w-auto h-9 bg-[#5059c9] hover:bg-[#434bb3] text-on-primary font-semibold text-[13px] px-4 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-xs" type="button">
+<span class="w-4 h-4 bg-surface-container-lowest text-[#5059c9] rounded-xs flex items-center justify-center text-[10px] font-black">T</span>
+<span>Join Teams</span>
+</button>
+<button class="w-full md:w-auto h-9 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface font-semibold text-[13px] px-3.5 rounded-lg transition-colors" type="button">
+            Request new time
+          </button>
+<button class="w-full md:w-auto h-9 bg-surface-container-lowest border border-outline-variant/70 hover:bg-error-container/30 text-outline hover:text-error font-medium text-[13px] px-3.5 rounded-lg transition-colors" type="button">
+            Cancel
+          </button>
+</div>
+</article>
+<!-- Card 2: Group Tutoring for MATH 112 Thursday -->
+<article class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-6 shadow-sm border-l-4 border-l-tertiary-container flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all hover:border-outline-variant">
+<!-- Left Visual Ring Countdown -->
+<div class="flex items-center gap-4 shrink-0">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 64 64">
+<!-- Background Ring Track -->
+<circle class="text-tertiary-fixed" cx="32" cy="32" fill="none" r="26" stroke="currentColor" stroke-width="4"></circle>
+<!-- Progress Ring Accent -->
+<circle class="text-tertiary" cx="32" cy="32" fill="none" r="26" stroke="currentColor" stroke-dasharray="163.36" stroke-dashoffset="65" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center px-1">
+<span class="text-[13px] font-bold text-on-surface leading-tight">12</span>
+<span class="text-[9px] font-medium text-on-surface-variant uppercase tracking-tighter">weeks</span>
+</div>
+</div>
+</div>
+<!-- Middle Content Column -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5 flex-wrap">
+<span class="text-[11px] uppercase tracking-wider font-bold text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded">
+              GROUP
+            </span>
+<span class="text-xs text-on-surface-variant font-medium">Weekly Cohort</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="text-lg font-bold text-on-surface leading-snug">MATH 112 Thursday</h2>
+<span class="bg-tertiary-fixed text-tertiary font-semibold text-xs px-2.5 py-0.5 rounded-full">
+              Group
+            </span>
+</div>
+<div class="mt-2 space-y-1">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="groups">groups</span>
+<span>MATH 112 · Tutor: Amal Hassan</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="place">place</span>
+<span>Every Thursday 4:00 PM (UAE) · Main - Hive</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="event_upcoming">event_upcoming</span>
+<span class="font-medium text-on-surface">Next: Thu 12 Nov</span>
+</div>
+</div>
+<div class="mt-3.5 flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1.5 bg-tertiary-fixed text-tertiary text-xs font-semibold px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Joined
+            </span>
+<span class="text-xs text-outline font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="forward_to_inbox">forward_to_inbox</span>
+              Invite on its way
+            </span>
+</div>
+</div>
+<!-- Right Action Column -->
+<div class="flex flex-row md:flex-col items-center md:items-end justify-end gap-2.5 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-outline-variant/40">
+<button class="w-full md:w-auto h-9 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface font-semibold text-[13px] px-3.5 rounded-lg transition-colors" type="button">
+            Skip next session
+          </button>
+<button class="w-full md:w-auto h-9 bg-surface-container-lowest border border-outline-variant/70 hover:bg-error-container/30 text-outline hover:text-error font-medium text-[13px] px-3.5 rounded-lg transition-colors" type="button">
+            Leave group
+          </button>
+</div>
+</article>
+<!-- Card 3: 1-on-1 Tutoring for PHYS 121 -->
+<article class="bg-surface-container-lowest border border-outline-variant/60 rounded-xl p-6 shadow-sm border-l-4 border-l-secondary flex flex-col md:flex-row items-start md:items-center justify-between gap-6 transition-all hover:border-outline-variant">
+<!-- Left Visual Ring Countdown -->
+<div class="flex items-center gap-4 shrink-0">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 64 64">
+<!-- Background Ring Track -->
+<circle class="text-surface-dim" cx="32" cy="32" fill="none" r="26" stroke="currentColor" stroke-width="4"></circle>
+<!-- Progress Ring Accent (Amber/Orange for Urgency: 2 days left) -->
+<circle cx="32" cy="32" fill="none" r="26" stroke="#d97706" stroke-dasharray="163.36" stroke-dashoffset="115" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center px-1">
+<span class="text-[13px] font-bold text-amber-700 leading-tight">2</span>
+<span class="text-[9px] font-medium text-amber-800 uppercase tracking-tighter">days left</span>
+</div>
+</div>
+</div>
+<!-- Middle Content Column -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5 flex-wrap">
+<span class="text-[11px] uppercase tracking-wider font-bold text-secondary bg-secondary-container/30 px-2 py-0.5 rounded">
+              BOOKED
+            </span>
+<span class="text-xs text-amber-700 font-semibold bg-amber-50 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+              Upcoming soon
+            </span>
+</div>
+<h2 class="text-lg font-bold text-on-surface leading-snug">Tutoring for PHYS 121</h2>
+<div class="mt-2 space-y-1">
+<div class="flex items-center gap-2 text-xs font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="school">school</span>
+<span>Tutor: Hamad Juma</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="videocam">videocam</span>
+<span>Tomorrow, 1:00 PM (UAE) · Online</span>
+</div>
+</div>
+<div class="mt-3.5 flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1.5 bg-secondary-container/40 text-on-secondary-container text-xs font-semibold px-2.5 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Confirmed
+            </span>
+<span class="text-xs text-outline font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+              Invite sent
+            </span>
+</div>
+</div>
+<!-- Right Action Column -->
+<div class="flex flex-col items-stretch md:items-end justify-end gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-outline-variant/40">
+<button class="w-full md:w-auto h-9 bg-[#5059c9] hover:bg-[#434bb3] text-on-primary font-semibold text-[13px] px-4 rounded-lg flex items-center justify-center gap-2 transition-colors shadow-xs" type="button">
+<span class="w-4 h-4 bg-surface-container-lowest text-[#5059c9] rounded-xs flex items-center justify-center text-[10px] font-black">T</span>
+<span>Join Teams</span>
+</button>
+<button class="w-full md:w-auto h-9 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface font-semibold text-[13px] px-3.5 rounded-lg transition-colors" type="button">
+            Request new time
+          </button>
+<!-- Cancellation Notice Policy -->
+<p class="text-[11px] text-outline text-left md:text-right max-w-[210px] mt-1 leading-snug">
+            Cancellations close 24 hours before. Contact your tutor.
+          </p>
+</div>
+</article>
+</div>
+<!-- Quick Help & Information Banner -->
+<div class="mt-8 bg-surface-container-low/80 border border-surface-container-highest rounded-xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-primary">Need schedule changes or course additions?</p>
+<p class="text-xs text-on-surface-variant">The Center for Teaching and Learning (CTL) peer mentors can assign additional sessions if required.</p>
+</div>
+</div>
+<a class="text-xs font-semibold text-primary hover:underline shrink-0 flex items-center gap-1" href="#ctl-support">
+<span>Contact Academic Support</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</main>
+<!-- Quiet University Platform Footer -->
+<footer class="mt-auto border-t border-outline-variant/40 py-6 bg-surface-container-lowest">
+<div class="max-w-[1040px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-outline">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">Early Intervention Platform</span>
+<span>·</span>
+<span>Fall 2026</span>
+<span>·</span>
+<span>Demo data only</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary transition-colors" href="#support">Need help? Contact CTL Academic Support</a>
+<span>·</span>
+<a class="hover:text-primary transition-colors" href="#guidelines">Student Guidelines</a>
+</div>
+</div>
+</footer>
+</body></html>

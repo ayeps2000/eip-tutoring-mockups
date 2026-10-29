@@ -1,0 +1,444 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Early Intervention Platform - My groups</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Public Sans font as per design tokens -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#cebdff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#f7f9ff",
+            "on-secondary-fixed-variant": "#005319",
+            "error": "#ba1a1a",
+            "surface-container-low": "#edf4ff",
+            "on-tertiary-fixed": "#21005e",
+            "outline-variant": "#c2c7ce",
+            "secondary-container": "#8af791",
+            "primary-fixed": "#cde5ff",
+            "secondary-fixed-dim": "#71dd7a",
+            "primary-container": "#234b6b",
+            "surface-tint": "#3c6283",
+            "on-primary-fixed-variant": "#224a6a",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#4f319b",
+            "on-primary-fixed": "#001d32",
+            "on-error-container": "#93000a",
+            "background": "#f7f9ff",
+            "inverse-primary": "#a4caf0",
+            "tertiary": "#391685",
+            "on-background": "#0c1d2b",
+            "outline": "#72777e",
+            "surface-variant": "#d4e4f8",
+            "surface-dim": "#cbdcef",
+            "inverse-surface": "#223241",
+            "on-surface-variant": "#42474d",
+            "surface-container-highest": "#d4e4f8",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#002106",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#e8f2ff",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#8dfa94",
+            "surface-container-high": "#d9eafe",
+            "on-surface": "#0c1d2b",
+            "tertiary-container": "#50339c",
+            "surface-bright": "#f7f9ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#c0aaff",
+            "tertiary-fixed": "#e8ddff",
+            "on-secondary-container": "#007326",
+            "surface-container": "#e2efff",
+            "on-primary-container": "#95bbe0",
+            "primary-fixed-dim": "#a4caf0",
+            "primary": "#033453",
+            "secondary": "#006e24"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+            "headline": [
+              "Public Sans"
+            ],
+            "display": [
+              "Public Sans"
+            ],
+            "body": [
+              "Public Sans"
+            ],
+            "label": [
+              "Public Sans"
+            ]
+          },
+          "fontSize": {}
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #edf1f4;
+      color: #142131;
+      font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .material-symbols-outlined {
+      font-size: 18px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased select-none">
+<!-- TopNavBar (Web Header Component from JSON/Design System) -->
+<header class="w-full px-6 flex items-center justify-between h-14 sticky top-0 z-50 bg-white border-b border-[#cfd7df] shadow-sm">
+<!-- Brand Cluster -->
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-[#234b6b] flex items-center justify-center text-white font-bold text-xs tracking-wider shadow-sm">
+        EIP
+      </div>
+<div class="flex flex-col">
+<span class="font-headline text-sm font-bold text-[#142131] leading-tight">Early Intervention Platform</span>
+<span class="text-[11px] text-[#667687] font-medium leading-none">Fall 2026 · Peer tutor</span>
+</div>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center space-x-4">
+<!-- Notification Icon with Badge -->
+<button aria-label="Notifications" class="relative p-1.5 text-[#3f5061] hover:text-[#142131] rounded-lg transition-colors hover:bg-[#edf1f4]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#c0392b] ring-2 ring-white"></span>
+</button>
+<div class="h-5 w-[1px] bg-[#cfd7df]"></div>
+<!-- User Profile -->
+<div class="flex items-center space-x-2.5">
+<div class="w-8 h-8 rounded-full bg-[#234b6b] text-white flex items-center justify-center text-xs font-semibold tracking-wide">
+          AH
+        </div>
+<div class="flex flex-col text-left">
+<span class="text-xs font-semibold text-[#142131] leading-tight">Amal Hassan</span>
+<span class="text-[11px] text-[#667687] leading-none">Mathematics &amp; Physics</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Body Layout: SideNav + Content Canvas -->
+<div class="flex flex-1 w-full max-w-[1280px] mx-auto">
+<!-- SideNavBar (from JSON Specification) -->
+<aside class="w-[220px] flex flex-col justify-between p-3 border-r border-[#cfd7df] bg-white h-[calc(100vh-3.5rem)] sticky top-14 shrink-0">
+<!-- Top nav links -->
+<div class="flex flex-col space-y-1">
+<!-- 1. My sessions -->
+<a class="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#3f5061] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[#667687]">calendar_today</span>
+<span>My sessions</span>
+</div>
+<span class="text-[11px] font-semibold text-[#667687] bg-[#edf1f4] px-1.5 py-0.5 rounded">5</span>
+</a>
+<!-- 2. My groups (ACTIVE as per JSON matching and requirements) -->
+<a class="flex items-center justify-between px-3 py-2 text-xs font-medium bg-[#e7f4ea] text-[#1f6f43] rounded-lg transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[#1f6f43]">groups</span>
+<span class="font-semibold">My groups</span>
+</div>
+<span class="text-[11px] font-bold text-[#1f6f43] bg-[#d5edd9] px-1.5 py-0.5 rounded">3</span>
+</a>
+<!-- 3. My availability -->
+<a class="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#3f5061] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[#667687]">schedule</span>
+<span>My availability</span>
+</div>
+<span class="text-[10px] font-medium text-[#667687] bg-[#edf1f4] px-1.5 py-0.5 rounded">4 days</span>
+</a>
+<!-- 4. My tutoring courses -->
+<a class="flex items-center justify-between px-3 py-2 text-xs font-medium text-[#3f5061] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<div class="flex items-center space-x-2.5">
+<span class="material-symbols-outlined text-[#667687]">school</span>
+<span>My tutoring courses</span>
+</div>
+<span class="text-[11px] font-semibold text-[#667687] bg-[#edf1f4] px-1.5 py-0.5 rounded">2</span>
+</a>
+<!-- 5. Request schedule update -->
+<a class="flex items-center space-x-2.5 px-3 py-2 text-xs font-medium text-[#3f5061] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[#667687]">edit_calendar</span>
+<span>Request schedule update</span>
+</a>
+</div>
+<!-- Footer navigation -->
+<div class="flex flex-col space-y-1 border-t border-[#cfd7df] pt-3">
+<a class="flex items-center space-x-2.5 px-3 py-2 text-xs font-medium text-[#667687] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help &amp; Support</span>
+</a>
+<a class="flex items-center space-x-2.5 px-3 py-2 text-xs font-medium text-[#667687] hover:text-[#142131] hover:bg-[#edf1f4] rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-7 overflow-y-auto">
+<!-- Title & Main Action Header -->
+<div class="flex items-start justify-between mb-5">
+<div>
+<h1 class="text-xl font-bold text-[#142131] font-headline tracking-tight">My groups</h1>
+<p class="text-xs text-[#3f5061] mt-1">Weekly cohorts you run this term. Students can join any open group from their booking page.</p>
+</div>
+<button class="flex items-center space-x-1.5 bg-[#2f9e44] hover:bg-[#288a3b] text-white text-[13px] font-semibold px-4 py-2 rounded-[8px] transition-colors shadow-sm cursor-pointer">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Create group</span>
+</button>
+</div>
+<!-- Alert Banner -->
+<div class="mb-5 flex items-start space-x-3 p-3.5 rounded-[10px] border border-[#e6d3a3] bg-[#fbf4e2] text-[#7c5a10]">
+<span class="material-symbols-outlined text-[#b38517] text-[20px] shrink-0 mt-0.5">info</span>
+<div class="text-xs leading-relaxed font-normal">
+<strong class="font-semibold">CTL set up MATH 112 Tuesday for you.</strong> Confirm it, edit it, or move it to another time in your hours. Students can already join.
+        </div>
+</div>
+<!-- Table Container Card -->
+<div class="bg-white rounded-[10px] border border-[#cfd7df] shadow-[0_1px_3px_rgba(20,33,49,0.06)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-[#f4f6f8] border-b border-[#cfd7df]">
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Group</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Course</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Schedule</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Where</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Seats</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Next session</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider px-3" scope="col">Invites</th>
+<th class="py-3 text-[11px] font-semibold text-[#667687] uppercase tracking-wider text-right px-3" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e3e8ed] text-xs">
+<!-- Row 1: MATH 112 Thursday -->
+<tr class="hover:bg-[#f9fafb] transition-colors">
+<!-- Group -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-semibold text-[#142131]">MATH 112 Thursday</div>
+<div class="text-[11px] text-[#667687] mt-0.5">created 23 Oct · open</div>
+</td>
+<!-- Course -->
+<td class="py-3.5 align-middle px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#f1edf9] text-[#5b3fa8] border border-[#ded6f2]">
+                    MATH 112
+                  </span>
+</td>
+<!-- Schedule -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-medium text-[#142131]">Thursdays 4:00–5:00 PM</div>
+<div class="text-[11px] text-[#667687] mt-0.5">6 Nov to 22 Jan, 12 sessions</div>
+</td>
+<!-- Where -->
+<td class="py-3.5 align-middle px-3">
+<div class="inline-flex items-center text-[#3f5061] font-medium space-x-1">
+<span class="material-symbols-outlined text-[15px] text-[#667687]">location_on</span>
+<span>Main - Hive</span>
+</div>
+</td>
+<!-- Seats Meter -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<div class="flex items-center space-x-2">
+<div aria-label="4 of 6 seats taken" class="flex items-center space-x-[2px]">
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+</div>
+<span class="text-[11px] text-[#667687] font-medium">4 of 6</span>
+</div>
+</td>
+<!-- Next session -->
+<td class="py-3.5 align-middle font-medium text-[#142131] whitespace-nowrap px-3">
+                  Thu 12 Nov 4:00 PM
+                </td>
+<!-- Invites status chip -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold bg-[#e4f1ea] text-[#356b53]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#356b53] mr-1.5"></span>
+                    Invite sent
+                  </span>
+</td>
+<!-- Actions -->
+<td class="py-3.5 align-middle text-right px-3 w-[200px] min-w-[200px]">
+<div class="flex flex-wrap items-center justify-end gap-1.5 ml-auto max-w-[200px]">
+<button class="h-8 px-3 rounded-[6px] border border-[#cfd7df] text-[#234b6b] hover:bg-[#edf1f4] font-medium text-xs transition-colors whitespace-nowrap">
+                      Open
+                    </button>
+<button class="h-8 px-3 rounded-[6px] border border-[#e57373] text-[#c62828] hover:bg-[#fdeded] font-medium text-xs transition-colors whitespace-nowrap">
+                      End series
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: MATH 111 Monday -->
+<tr class="hover:bg-[#f9fafb] transition-colors">
+<!-- Group -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-semibold text-[#142131]">MATH 111 Monday</div>
+<div class="text-[11px] text-[#667687] mt-0.5">created 20 Oct · open</div>
+</td>
+<!-- Course -->
+<td class="py-3.5 align-middle px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#f1edf9] text-[#5b3fa8] border border-[#ded6f2]">
+                    MATH 111
+                  </span>
+</td>
+<!-- Schedule -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-medium text-[#142131]">Mondays 5:00–6:00 PM</div>
+<div class="text-[11px] text-[#667687] mt-0.5">3 Nov to 19 Jan, 12 sessions</div>
+</td>
+<!-- Where -->
+<td class="py-3.5 align-middle px-3">
+<div class="inline-flex items-center text-[#3f5061] font-medium space-x-1">
+<span class="material-symbols-outlined text-[15px] text-[#667687]">videocam</span>
+<span>Online</span>
+</div>
+</td>
+<!-- Seats Meter -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<div class="flex items-center space-x-2">
+<div aria-label="2 of 6 seats taken" class="flex items-center space-x-[2px]">
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+</div>
+<span class="text-[11px] text-[#667687] font-medium">2 of 6</span>
+</div>
+</td>
+<!-- Next session -->
+<td class="py-3.5 align-middle font-medium text-[#142131] whitespace-nowrap px-3">
+                  Mon 9 Nov 5:00 PM
+                </td>
+<!-- Invites status chip -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold bg-[#e3e9ee] text-[#234b6b]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#234b6b] mr-1.5"></span>
+                    Pending
+                  </span>
+</td>
+<!-- Actions -->
+<td class="py-3.5 align-middle text-right px-3 w-[200px] min-w-[200px]">
+<div class="flex flex-wrap items-center justify-end gap-1.5 ml-auto max-w-[200px]">
+<button class="h-8 px-3 rounded-[6px] border border-[#cfd7df] text-[#234b6b] hover:bg-[#edf1f4] font-medium text-xs transition-colors whitespace-nowrap">
+                      Open
+                    </button>
+<button class="h-8 px-3 rounded-[6px] border border-[#e57373] text-[#c62828] hover:bg-[#fdeded] font-medium text-xs transition-colors whitespace-nowrap">
+                      End series
+                    </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: MATH 112 Tuesday (Tentative CTL group) -->
+<tr class="hover:bg-[#f9fafb] transition-colors">
+<!-- Group -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-semibold text-[#142131]">MATH 112 Tuesday</div>
+<div class="text-[11px] text-[#667687] mt-0.5">set up by CTL 27 Oct · open</div>
+<div class="mt-1.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#fbf1d9] text-[#85651d] border border-dashed border-[#d1b46a] whitespace-nowrap">
+<span class="w-1.5 h-1.5 rounded-full bg-[#85651d] mr-1.5"></span>
+                      Tentative · set up by CTL
+                    </span>
+</div>
+</td>
+<!-- Course -->
+<td class="py-3.5 align-middle px-3">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#f1edf9] text-[#5b3fa8] border border-[#ded6f2]">
+                    MATH 112
+                  </span>
+</td>
+<!-- Schedule -->
+<td class="py-3.5 align-middle px-3">
+<div class="font-medium text-[#142131]">Tuesdays 5:00–6:00 PM</div>
+<div class="text-[11px] text-[#667687] mt-0.5">10 Nov to 19 Jan, 11 sessions</div>
+</td>
+<!-- Where -->
+<td class="py-3.5 align-middle px-3">
+<div class="inline-flex items-center text-[#3f5061] font-medium space-x-1">
+<span class="material-symbols-outlined text-[15px] text-[#667687]">location_on</span>
+<span>SAN</span>
+</div>
+</td>
+<!-- Seats Meter -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<div class="flex items-center space-x-2">
+<div aria-label="1 of 6 seats taken" class="flex items-center space-x-[2px]">
+<span class="w-[4px] h-[14px] rounded-full bg-[#2f9e44]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+<span class="w-[4px] h-[14px] rounded-full bg-[#d5dde5]"></span>
+</div>
+<span class="text-[11px] text-[#667687] font-medium">1 of 6</span>
+</div>
+</td>
+<!-- Next session -->
+<td class="py-3.5 align-middle font-medium text-[#142131] whitespace-nowrap px-3">
+                  Tue 10 Nov 5:00 PM
+                </td>
+<!-- Invites status chip -->
+<td class="py-3.5 align-middle whitespace-nowrap px-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold bg-[#e3e9ee] text-[#234b6b]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#234b6b] mr-1.5"></span>
+                    Pending
+                  </span>
+</td>
+<!-- Actions (Notice: No End series button!) -->
+<td class="py-3.5 align-middle text-right px-3 w-[200px] min-w-[200px]">
+<div class="flex flex-wrap items-center justify-end gap-1.5 ml-auto max-w-[200px]">
+<button class="h-8 px-3 rounded-[6px] bg-[#2f9e44] hover:bg-[#288a3b] text-white font-medium text-xs transition-colors shadow-sm whitespace-nowrap">
+                      Confirm
+                    </button>
+<button class="h-8 px-3 rounded-[6px] border border-[#cfd7df] text-[#234b6b] hover:bg-[#edf1f4] font-medium text-xs transition-colors whitespace-nowrap">
+                      Edit
+                    </button>
+<button class="h-8 px-3 rounded-[6px] border border-[#cfd7df] text-[#234b6b] hover:bg-[#edf1f4] font-medium text-xs transition-colors whitespace-nowrap">
+                      Reschedule series
+                    </button>
+<button class="h-8 px-3 rounded-[6px] border border-[#cfd7df] text-[#234b6b] hover:bg-[#edf1f4] font-medium text-xs transition-colors whitespace-nowrap">
+                      Open
+                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Footnote under table -->
+<div class="mt-3 text-[11px] text-[#667687] flex items-center space-x-1 font-medium">
+<span>Ended groups keep their attendance in every report. Groups set up by CTL are ended by CTL.</span>
+</div>
+</main>
+</div>
+</body></html>
